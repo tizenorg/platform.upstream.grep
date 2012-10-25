@@ -29,11 +29,6 @@ make check VERBOSE=1
 %make_install
 %find_lang %name
 
-%post docs
-%install_info --info-dir=%{_infodir} %{_infodir}/grep.info.gz
-
-%postun docs
-%install_info_delete --info-dir=%{_infodir} %{_infodir}/grep.info.gz
 
 %docs_package
 
