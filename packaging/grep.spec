@@ -32,6 +32,8 @@ make check VERBOSE=1
 
 %docs_package
 
+%lang_package
+
 %files 
 %defattr(-,root,root)
 %{_bindir}/*
