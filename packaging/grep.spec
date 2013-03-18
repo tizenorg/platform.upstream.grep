@@ -7,7 +7,7 @@ Version:        2.14
 Release:        0
 Summary:        Print lines matching a pattern
 License:        GPL-3.0+
-Group:          Productivity/Text/Utilities
+Group:          Base/Tools
 Source0:        grep-%{version}.tar.xz
 
 %description
@@ -36,6 +36,7 @@ make check VERBOSE=1
 
 %files 
 %defattr(-,root,root)
+%license COPYING
 %{_bindir}/*
 
 %changelog
