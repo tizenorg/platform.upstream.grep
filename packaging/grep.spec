@@ -2,13 +2,14 @@ Name:           grep
 BuildRequires:  automake
 BuildRequires:  pcre-devel
 Url:            http://www.gnu.org/software/grep/
-Provides:       base:/usr/bin/grep
 Version:        2.14
 Release:        0
 Summary:        Print lines matching a pattern
 License:        GPL-3.0+
 Group:          Base/Tools
 Source0:        grep-%{version}.tar.xz
+Provides:       base:/usr/bin/grep
+Provides:       /bin/grep
 
 %description
 The grep command searches one or more input files for lines
