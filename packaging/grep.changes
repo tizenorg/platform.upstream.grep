@@ -1,3 +1,6 @@
+* Thu Jun 27 2013 Patrick McCarty <patrick.mccarty@linux.intel.com> f1093be
+- packaging: provide /bin/grep for compatibility
+
 * Mon Mar 18 2013 Anas Nashif <anas.nashif@intel.com> upstream/2.14@b484a10
 - Fixed package group/license
 
