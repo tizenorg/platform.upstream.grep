@@ -8,6 +8,7 @@ Summary:        Print lines matching a pattern
 License:        GPL-3.0+
 Group:          Base/Tools
 Source0:        grep-%{version}.tar.xz
+Source1001: 	grep.manifest
 Provides:       base:/usr/bin/grep
 Provides:       /bin/grep
 
@@ -18,6 +19,7 @@ the matching lines.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-silent-rules --without-included-regex
@@ -36,6 +38,7 @@ make check VERBOSE=1
 %lang_package
 
 %files 
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
 %{_bindir}/*
