@@ -2,11 +2,11 @@ Name:           grep
 BuildRequires:  automake
 BuildRequires:  pcre-devel
 Url:            http://www.gnu.org/software/grep/
-Version:        2.14
+Version:        2.16
 Release:        0
 Summary:        Print lines matching a pattern
 License:        GPL-3.0+
-Group:          Base/Tools
+Group:          Base/Utilities
 Source0:        grep-%{version}.tar.xz
 Source1001: 	grep.manifest
 Provides:       base:/usr/bin/grep
@@ -42,5 +42,3 @@ make check VERBOSE=1
 %defattr(-,root,root)
 %license COPYING
 %{_bindir}/*
-
-%changelog
