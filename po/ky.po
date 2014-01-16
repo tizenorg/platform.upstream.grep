@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep 2.5.3\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2012-08-20 08:12+0200\n"
+"POT-Creation-Date: 2014-01-01 20:44-0800\n"
 "PO-Revision-Date: 2007-09-01 17:27+0100\n"
 "Last-Translator: Azilet Beishenaliev <aziletb@gmail.com>\n"
 "Language-Team: Kirghiz <i18n-team-ky-kyrgyz@lists.sourceforge.net>\n"
@@ -20,9 +20,9 @@ msgstr ""
 "X-Poedit-Country: KYRGYZSTAN\n"
 
 #: lib/argmatch.c:133
-#, fuzzy, c-format
+#, c-format
 msgid "invalid argument %s for %s"
-msgstr "максимум сан жарабайт"
+msgstr ""
 
 #: lib/argmatch.c:134
 #, c-format
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Valid arguments are:"
 msgstr ""
 
-#: lib/closeout.c:112 src/main.c:952
+#: lib/closeout.c:112 src/main.c:954
 #, c-format
 msgid "write error"
 msgstr ""
@@ -99,7 +99,7 @@ msgstr "%s: `%s' опциясы менен аргумент болуш кере�
 
 # Памятты эмне дейбиз яя? ;)
 #: lib/obstack.c:413 lib/obstack.c:415 lib/xalloc-die.c:34 src/kwset.c:178
-#: src/kwset.c:186 src/kwset.c:409 src/pcresearch.c:153
+#: src/kwset.c:186 src/kwset.c:409 src/pcresearch.c:191
 #, c-format
 msgid "memory exhausted"
 msgstr "память жетпей калды"
@@ -143,76 +143,76 @@ msgstr "\""
 msgid "'"
 msgstr "\""
 
-#: lib/regcomp.c:130
+#: lib/regcomp.c:131
 msgid "Success"
 msgstr ""
 
-#: lib/regcomp.c:133
+#: lib/regcomp.c:134
 msgid "No match"
 msgstr ""
 
-#: lib/regcomp.c:136
+#: lib/regcomp.c:137
 msgid "Invalid regular expression"
 msgstr ""
 
-#: lib/regcomp.c:139
+#: lib/regcomp.c:140
 msgid "Invalid collation character"
 msgstr ""
 
-#: lib/regcomp.c:142
+#: lib/regcomp.c:143
 msgid "Invalid character class name"
 msgstr ""
 
-#: lib/regcomp.c:145
+#: lib/regcomp.c:146
 msgid "Trailing backslash"
 msgstr ""
 
-#: lib/regcomp.c:148
+#: lib/regcomp.c:149
 msgid "Invalid back reference"
 msgstr ""
 
-#: lib/regcomp.c:151
+#: lib/regcomp.c:152
 msgid "Unmatched [ or [^"
 msgstr ""
 
-#: lib/regcomp.c:154
+#: lib/regcomp.c:155
 msgid "Unmatched ( or \\("
 msgstr ""
 
-#: lib/regcomp.c:157
+#: lib/regcomp.c:158
 msgid "Unmatched \\{"
 msgstr ""
 
-#: lib/regcomp.c:160 src/dfa.c:1371
+#: lib/regcomp.c:161 src/dfa.c:1374
 msgid "Invalid content of \\{\\}"
 msgstr ""
 
-#: lib/regcomp.c:163
+#: lib/regcomp.c:164
 msgid "Invalid range end"
 msgstr ""
 
 # Памятты эмне дейбиз яя? ;)
-#: lib/regcomp.c:166
+#: lib/regcomp.c:167
 msgid "Memory exhausted"
 msgstr "Память жетпей калды"
 
-#: lib/regcomp.c:169
+#: lib/regcomp.c:170
 msgid "Invalid preceding regular expression"
 msgstr ""
 
-#: lib/regcomp.c:172
+#: lib/regcomp.c:173
 msgid "Premature end of regular expression"
 msgstr ""
 
-#: lib/regcomp.c:175 src/dfa.c:1374
+#: lib/regcomp.c:176 src/dfa.c:1377
 msgid "Regular expression too big"
 msgstr ""
 
-#: lib/regcomp.c:178
+#: lib/regcomp.c:179
 msgid "Unmatched ) or \\)"
 msgstr ""
 
-#: lib/regcomp.c:703
+#: lib/regcomp.c:707
 msgid "No previous regular expression"
 msgstr ""
 
@@ -338,7 +338,7 @@ msgstr ""
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: lib/version-etc.c:245 src/main.c:1629
+#: lib/version-etc.c:245 src/main.c:1637
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -364,58 +364,58 @@ msgstr ""
 msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
 msgstr ""
 
-#: lib/version-etc.c:256 src/main.c:1632
+#: lib/version-etc.c:256 src/main.c:1640
 msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
 msgstr ""
 
 #: lib/xstrtol-error.c:63
-#, fuzzy, c-format
+#, c-format
 msgid "invalid %s%s argument '%s'"
-msgstr "максимум сан жарабайт"
+msgstr ""
 
 #: lib/xstrtol-error.c:68
-#, fuzzy, c-format
+#, c-format
 msgid "invalid suffix in %s%s argument '%s'"
-msgstr "максимум сан жарабайт"
+msgstr ""
 
 #: lib/xstrtol-error.c:72
 #, c-format
 msgid "%s%s argument '%s' too large"
 msgstr ""
 
-#: src/dfa.c:952 src/dfa.c:955 src/dfa.c:975 src/dfa.c:985 src/dfa.c:997
-#: src/dfa.c:1048 src/dfa.c:1057 src/dfa.c:1060 src/dfa.c:1065 src/dfa.c:1078
-#: src/dfa.c:1135
+#: src/dfa.c:956 src/dfa.c:959 src/dfa.c:979 src/dfa.c:989 src/dfa.c:1001
+#: src/dfa.c:1052 src/dfa.c:1061 src/dfa.c:1064 src/dfa.c:1069 src/dfa.c:1082
+#: src/dfa.c:1138
 #, fuzzy
 msgid "unbalanced ["
 msgstr "[ - мунун уйкашы жок"
 
-#: src/dfa.c:1006
+#: src/dfa.c:1010
 msgid "invalid character class"
 msgstr ""
 
-#: src/dfa.c:1172
+#: src/dfa.c:1175
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr ""
 
 # escape - кыргызча???
-#: src/dfa.c:1224
+#: src/dfa.c:1227
 #, fuzzy
 msgid "unfinished \\ escape"
 msgstr "Бүтпөй калган эскейп \\"
 
-#: src/dfa.c:1759
+#: src/dfa.c:1794
 #, fuzzy
 msgid "unbalanced ("
 msgstr "( - мунун уйкашы жок"
 
 # кайсы синтаксис? грептин шаблонубу?
-#: src/dfa.c:1886
+#: src/dfa.c:1920
 #, fuzzy
 msgid "no syntax specified"
 msgstr "Синтаксис аталган жок"
 
-#: src/dfa.c:1894
+#: src/dfa.c:1928
 #, fuzzy
 msgid "unbalanced )"
 msgstr ") - мунун уйкашы жок"
@@ -455,67 +455,67 @@ msgstr ""
 "`egrep' же `fgrep'  деп туз иштетуу колдонулбай калды.\n"
 
 #. This is a proper name. See the gettext manual, section Names.
-#: src/main.c:58
+#: src/main.c:57
 msgid "Mike Haertel"
 msgstr ""
 
-#: src/main.c:59
+#: src/main.c:58
 msgid "others, see <http://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>"
 msgstr ""
 
-#: src/main.c:501
+#: src/main.c:500
 msgid "invalid context length argument"
 msgstr "контекст узундугу жарабайт"
 
-#: src/main.c:570
+#: src/main.c:569
 msgid "lseek failed"
 msgstr ""
 
-#: src/main.c:708
+#: src/main.c:707
 #, c-format
 msgid "input is too large to count"
 msgstr "берилген данныйлардын саны саналбай турганча көп"
 
-#: src/main.c:1265
+#: src/main.c:1273
 #, c-format
 msgid "Binary file %s matches\n"
 msgstr "Экилик форматтагы %s файлы уйкашат\n"
 
-#: src/main.c:1308
+#: src/main.c:1316
 #, fuzzy, c-format
 msgid "warning: %s: %s"
 msgstr "эскертүү: %s: %s\n"
 
-#: src/main.c:1309
+#: src/main.c:1317
 msgid "recursive directory loop"
 msgstr "бирибирине кирген папка айлампасы бар"
 
-#: src/main.c:1457
+#: src/main.c:1465
 #, c-format
 msgid "input file %s is also the output"
 msgstr ""
 
-#: src/main.c:1515
+#: src/main.c:1523
 msgid "(standard input)"
 msgstr "(стандарт кирүү)"
 
-#: src/main.c:1531 src/main.c:1538
+#: src/main.c:1539 src/main.c:1546
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERN [FILE]...\n"
 msgstr "Колдонулушу: %s [ОПЦИЯ]... ШАБЛОН [ФАЙЛ]...\n"
 
-#: src/main.c:1533
+#: src/main.c:1541
 #, fuzzy, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Толук маалымат үчүн `%s --help' деп жазгыла.\n"
 
-#: src/main.c:1539
+#: src/main.c:1547
 #, c-format
 msgid "Search for PATTERN in each FILE or standard input.\n"
 msgstr "Ар ФАЙЛда же стандарт кирүүдө ШАБЛОНду изде.\n"
 
 # выражение дегендин кыргызчасын жазыш керек
-#: src/main.c:1542
+#: src/main.c:1550
 #, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -527,7 +527,7 @@ msgstr ""
 "Регулярдуу выражение тандоо жана мааниси:\n"
 
 # выражение - кыргызчасын жаз!!!!
-#: src/main.c:1547
+#: src/main.c:1555
 #, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERN is an extended regular expression (ERE)\n"
@@ -542,7 +542,7 @@ msgstr ""
 "  -P, --perl-regexp         ШАБЛОН Perl түрүндөгү регулярдуу выражение\n"
 
 # выражение!!!!
-#: src/main.c:1553
+#: src/main.c:1561
 #, c-format
 msgid ""
 "  -e, --regexp=PATTERN      use PATTERN for matching\n"
@@ -560,7 +560,7 @@ msgstr ""
 "  -z, --null-data           дата(данный) саптары 0 байты(EOL эмес) менен "
 "бүтөт\n"
 
-#: src/main.c:1560
+#: src/main.c:1568
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -579,7 +579,7 @@ msgstr ""
 "      --help                бул жардам маалыматын көрсөтүп бүтүрөт\n"
 "      --mmap                мүмкүнчүлүк болсо mmap кирүүсү колдонулат\n"
 
-#: src/main.c:1568
+#: src/main.c:1576
 #, c-format
 msgid ""
 "\n"
@@ -594,7 +594,7 @@ msgid ""
 "prefix\n"
 msgstr ""
 
-#: src/main.c:1579
+#: src/main.c:1587
 #, c-format
 msgid ""
 "  -o, --only-matching       show only the part of a line matching PATTERN\n"
@@ -604,7 +604,7 @@ msgid ""
 "  -a, --text                equivalent to --binary-files=text\n"
 msgstr ""
 
-#: src/main.c:1586
+#: src/main.c:1594
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -616,7 +616,7 @@ msgid ""
 "  -R, --dereference-recursive  likewise, but follow all symlinks\n"
 msgstr ""
 
-#: src/main.c:1595
+#: src/main.c:1603
 #, c-format
 msgid ""
 "      --include=FILE_PATTERN  search only files that match FILE_PATTERN\n"
@@ -627,7 +627,7 @@ msgid ""
 "skipped.\n"
 msgstr ""
 
-#: src/main.c:1601
+#: src/main.c:1609
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs containing no match\n"
@@ -637,7 +637,7 @@ msgid ""
 "  -Z, --null                print 0 byte after FILE name\n"
 msgstr ""
 
-#: src/main.c:1607
+#: src/main.c:1615
 #, c-format
 msgid ""
 "\n"
@@ -647,7 +647,7 @@ msgid ""
 "  -C, --context=NUM         print NUM lines of output context\n"
 msgstr ""
 
-#: src/main.c:1614
+#: src/main.c:1622
 #, fuzzy, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
@@ -676,7 +676,7 @@ msgstr ""
 "(MSDOS)\n"
 "\n"
 
-#: src/main.c:1624
+#: src/main.c:1632
 #, fuzzy, c-format
 msgid ""
 "When FILE is -, read standard input.  With no FILE, read . if a command-"
@@ -690,47 +690,47 @@ msgstr ""
 "статусу 0 болот, башка учурда 1; эгерде ката чыкса жана -q опциясы "
 "берилбеген болсо бүтүрүү статусу 2 болот.\n"
 
-#: src/main.c:1630
+#: src/main.c:1638
 #, c-format
 msgid "GNU Grep home page: <%s>\n"
 msgstr ""
 
-#: src/main.c:1662
+#: src/main.c:1670
 #, c-format
 msgid "%s can only use the %s pattern syntax"
 msgstr ""
 
-#: src/main.c:1665
+#: src/main.c:1673
 #, c-format
 msgid "conflicting matchers specified"
 msgstr "уйкаштыруучуларда конфликттер табылды"
 
-#: src/main.c:1679
+#: src/main.c:1687
 #, fuzzy, c-format
 msgid "invalid matcher %s"
 msgstr "максимум сан жарабайт"
 
-#: src/main.c:1927
+#: src/main.c:1940
 #, c-format
 msgid "unknown devices method"
 msgstr "аспап методу белгисиз"
 
-#: src/main.c:2056
+#: src/main.c:2071
 #, c-format
 msgid "invalid max count"
 msgstr "максимум сан жарабайт"
 
-#: src/main.c:2113
+#: src/main.c:2128
 #, c-format
 msgid "unknown binary-files type"
 msgstr "белгисиз файл түрү"
 
-#: src/main.c:2172
+#: src/main.c:2187
 #, c-format
 msgid "the --mmap option has been a no-op since 2010"
 msgstr ""
 
-#: src/pcresearch.c:42
+#: src/pcresearch.c:51
 #, fuzzy
 msgid ""
 "support for the -P option is not compiled into this --disable-perl-regexp "
@@ -738,24 +738,44 @@ msgid ""
 msgstr ""
 "Бул --disable-perl-regexp опциясы менен жасалган, -P опциясы кошулуу эмес"
 
-#: src/pcresearch.c:56
+#: src/pcresearch.c:74
 #, fuzzy, c-format
 msgid "the -P option only supports a single pattern"
 msgstr "-P опциясы бир гана шаблон ала алат"
 
-#: src/pcresearch.c:110
+#: src/pcresearch.c:120
+#, c-format
+msgid "internal error (should never happen)"
+msgstr ""
+
+#: src/pcresearch.c:130
+#, c-format
+msgid "failed to allocate memory for the PCRE JIT stack"
+msgstr ""
+
+#: src/pcresearch.c:144
 #, c-format
 msgid "internal error"
 msgstr ""
 
-#: src/pcresearch.c:138
+#: src/pcresearch.c:176
 #, c-format
 msgid "exceeded PCRE's line length limit"
 msgstr ""
 
-#: src/pcresearch.c:157
+#: src/pcresearch.c:195
 #, c-format
 msgid "exceeded PCRE's backtracking limit"
+msgstr ""
+
+#: src/pcresearch.c:199
+#, c-format
+msgid "invalid UTF-8 byte sequence in input"
+msgstr ""
+
+#: src/pcresearch.c:206
+#, c-format
+msgid "internal PCRE error: %d"
 msgstr ""
 
 #~ msgid "unfinished repeat count"
@@ -767,53 +787,7 @@ msgstr ""
 #~ msgid "writing output"
 #~ msgstr "жооп жазыбатат"
 
-# kandai koldpnulat bilbeim.
-#, fuzzy
-#~ msgid ""
-#~ "in GREP_COLORS=\"%s\", the \"%s\" capacity needs a value (\"=...\"); "
-#~ "skipped"
-#~ msgstr ""
-#~ "GREP_COLORS=\"%s\" дегенде, \"%s\" көлөмүнө маани жазылыш керек (\"=..."
-#~ "\"); колдонулбайт."
-
-# kandai koldpnulat bilbeim.
-#, fuzzy
-#~ msgid ""
-#~ "in GREP_COLORS=\"%s\", the \"%s\" capacity is boolean and cannot take a "
-#~ "value (\"=%s\"); skipped"
-#~ msgstr ""
-#~ "GREP_COLORS=\"%s\" дегенде, \"%s\" көлөмү булев түрүндө жана маани "
-#~ "алалбайт (\"=%s\"); колдонулбайт."
-
-# kandai koldpnulat bilbeim.
-#, fuzzy
-#~ msgid "in GREP_COLORS=\"%s\", the \"%s\" capacity %s"
-#~ msgstr "GREP_COLORS=\"%s\" дегенде, \"%s\" көлөмү %s."
-
-#, fuzzy
-#~ msgid ""
-#~ "stopped processing of ill-formed GREP_COLORS=\"%s\" at remaining "
-#~ "substring \"%s\""
-#~ msgstr ""
-#~ "Туура эмес жазылган GREP_COLORS=\"%s\", \"%s\" катарында ишке алынуусу "
-#~ "токтоду."
-
-#, fuzzy
-#~ msgid "%s: option '%s' is ambiguous\n"
-#~ msgstr "%s: `-W %s' опциясы так эмес\n"
-
-#, fuzzy
-#~ msgid "warning: %s"
-#~ msgstr "эскертүү: %s: %s\n"
-
-#~ msgid "unknown directories method"
-#~ msgstr "папка методу белгисиз"
-
-#~ msgid "The -P and -z options cannot be combined"
-#~ msgstr "-P жана -z опциялары чогуу колдонулбайт"
-
 # line - сап деп колдоном
-#, fuzzy
 #~ msgid ""
 #~ "\n"
 #~ "Output control:\n"
@@ -841,9 +815,9 @@ msgstr ""
 #~ "FILE_PATTERN\n"
 #~ "      --exclude-from=FILE   skip files matching any file pattern from "
 #~ "FILE\n"
-#~ "      --exclude-dir=PATTERN  directories that match PATTERN will be "
+#~ "      --exclude-dir=PATTERN directories that match PATTERN will be "
 #~ "skipped.\n"
-#~ "  -L, --files-without-match  print only names of FILEs containing no "
+#~ "  -L, --files-without-match print only names of FILEs containing no "
 #~ "match\n"
 #~ "  -l, --files-with-matches  print only names of FILEs containing matches\n"
 #~ "  -c, --count               print only a count of matching lines per "
@@ -890,8 +864,35 @@ msgstr ""
 #~ "  -T, --initial-tab         табтарды түздөйт (керек болсо)\n"
 #~ "  -Z, --null                файлдын атынан кийин 0 байты жазылат\n"
 
-#~ msgid "%s: illegal option -- %c\n"
-#~ msgstr "%s: мындай опция колдонулбайт -- %c\n"
+# kandai koldpnulat bilbeim.
+#~ msgid ""
+#~ "In GREP_COLORS=\"%s\", the \"%s\" capacity needs a value (\"=...\"); "
+#~ "skipped."
+#~ msgstr ""
+#~ "GREP_COLORS=\"%s\" дегенде, \"%s\" көлөмүнө маани жазылыш керек (\"=..."
+#~ "\"); колдонулбайт."
+
+# kandai koldpnulat bilbeim.
+#~ msgid ""
+#~ "In GREP_COLORS=\"%s\", the \"%s\" capacity is boolean and cannot take a "
+#~ "value (\"=%s\"); skipped."
+#~ msgstr ""
+#~ "GREP_COLORS=\"%s\" дегенде, \"%s\" көлөмү булев түрүндө жана маани "
+#~ "алалбайт (\"=%s\"); колдонулбайт."
+
+# kandai koldpnulat bilbeim.
+#~ msgid "In GREP_COLORS=\"%s\", the \"%s\" capacity %s."
+#~ msgstr "GREP_COLORS=\"%s\" дегенде, \"%s\" көлөмү %s."
+
+#~ msgid ""
+#~ "Stopped processing of ill-formed GREP_COLORS=\"%s\" at remaining "
+#~ "substring \"%s\"."
+#~ msgstr ""
+#~ "Туура эмес жазылган GREP_COLORS=\"%s\", \"%s\" катарында ишке алынуусу "
+#~ "токтоду."
+
+#~ msgid "unknown directories method"
+#~ msgstr "папка методу белгисиз"
 
 # FSF котормосу ;)
 #~ msgid ""
@@ -910,3 +911,9 @@ msgstr ""
 #~ "Бул эркин колдонулуучу программа; копиясын алуу үчүн коддордо жазылган\n"
 #~ "шарттарды караңыз. Бул программанын эч убадасы ЖОК; керек болсо СООДА же\n"
 #~ "БИР МАКСАТКА ЫҢГАЙЛУУ болуусуна да убада жок.\n"
+
+#~ msgid "The -P and -z options cannot be combined"
+#~ msgstr "-P жана -z опциялары чогуу колдонулбайт"
+
+#~ msgid "%s: illegal option -- %c\n"
+#~ msgstr "%s: мындай опция колдонулбайт -- %c\n"

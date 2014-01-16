@@ -1,6 +1,5 @@
-/* Compare two wide strings using the current locale.
-   Copyright (C) 2011-2012 Free Software Foundation, Inc.
-   Written by Bruno Haible <bruno@clisp.org>, 2011.
+/* Test of <sys/time.h> substitute.
+   Copyright (C) 2007, 2009-2014 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -15,13 +14,21 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
+/* Written by Bruno Haible <bruno@clisp.org>, 2007.  */
+
 #include <config.h>
 
-/* Specification.  */
-#include <wchar.h>
+#include <sys/time.h>
 
-#include <errno.h>
-#include <stdlib.h>
-#include <string.h>
+/* Check that the 'struct timeval' type is defined.  */
+struct timeval a;
 
-#include "wcscoll-impl.h"
+/* Check that a.tv_sec is wide enough to hold a time_t, ignoring
+   signedness issues.  */
+typedef int verify_tv_sec_type[sizeof (time_t) <= sizeof (a.tv_sec) ? 1 : -1];
+
+int
+main (void)
+{
+  return 0;
+}

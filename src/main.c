@@ -1,5 +1,5 @@
 /* grep.c - main driver file for grep.
-   Copyright (C) 1992, 1997-2002, 2004-2012 Free Software Foundation, Inc.
+   Copyright (C) 1992, 1997-2002, 2004-2014 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@
 #include "progname.h"
 #include "propername.h"
 #include "quote.h"
+#include "safe-read.h"
 #include "version-etc.h"
 #include "xalloc.h"
 #include "xstrtol.h"
@@ -51,8 +52,6 @@
 #define SEP_CHAR_SELECTED ':'
 #define SEP_CHAR_REJECTED '-'
 #define SEP_STR_GROUP    "--"
-
-#define STREQ(a, b) (strcmp (a, b) == 0)
 
 #define AUTHORS \
   proper_name ("Mike Haertel"), \
@@ -643,7 +642,7 @@ fillbuf (size_t save, struct stat const *st)
   readsize = buffer + bufalloc - readbuf;
   readsize -= readsize % pagesize;
 
-  fillsize = read (bufdesc, readbuf, readsize);
+  fillsize = safe_read (bufdesc, readbuf, readsize);
   if (fillsize < 0)
     fillsize = cc = 0;
   bufoffset += fillsize;
@@ -932,15 +931,18 @@ prline (char const *beg, char const *lim, int sep)
     line_color = match_color = NULL; /* Shouldn't be used.  */
 
   if ((only_matching && matching)
-      || (color_option  && (*line_color || *match_color)))
+      || (color_option && (*line_color || *match_color)))
     {
-      /* We already know that non-matching lines have no match (to colorize).  */
+      /* We already know that non-matching lines have no match (to colorize). */
       if (matching && (only_matching || *match_color))
         beg = print_line_middle (beg, lim, line_color, match_color);
 
-      /* FIXME: this test may be removable.  */
       if (!only_matching && *line_color)
-        beg = print_line_tail (beg, lim, line_color);
+        {
+          /* This code is exercised at least when grep is invoked like this:
+             echo k| GREP_COLORS='sl=01;32' src/grep k --color=always  */
+          beg = print_line_tail (beg, lim, line_color);
+        }
     }
 
   if (!only_matching && lim > beg)
@@ -1048,8 +1050,12 @@ prtext (char const *beg, char const *lim, intmax_t *nlinesp)
   used = 1;
 }
 
+/* Invoke the matcher, EXECUTE, on buffer BUF of SIZE bytes.  If there
+   is no match, return (size_t) -1.  Otherwise, set *MATCH_SIZE to the
+   length of the match and return the offset of the start of the match.  */
 static size_t
-do_execute (char const *buf, size_t size, size_t *match_size, char const *start_ptr)
+do_execute (char const *buf, size_t size, size_t *match_size,
+            char const *start_ptr)
 {
   size_t result;
   const char *line_next;
@@ -1072,7 +1078,8 @@ do_execute (char const *buf, size_t size, size_t *match_size, char const *start_
   for (line_next = buf; line_next < buf + size; )
     {
       const char *line_buf = line_next;
-      const char *line_end = memchr (line_buf, eolbyte, (buf + size) - line_buf);
+      const char *line_end = memchr (line_buf, eolbyte,
+                                     (buf + size) - line_buf);
       if (line_end == NULL)
         line_next = line_end = buf + size;
       else
@@ -1216,7 +1223,8 @@ grep (int fd, struct stat const *st)
             nlines += grepbuf (beg, lim);
           if (pending)
             prpending (lim);
-          if ((!outleft && !pending) || (nlines && done_on_match && !out_invert))
+          if ((!outleft && !pending)
+              || (nlines && done_on_match && !out_invert))
             goto finish_grep;
         }
 
@@ -1748,16 +1756,20 @@ static int
 get_nondigit_option (int argc, char *const *argv, intmax_t *default_context)
 {
   static int prev_digit_optind = -1;
-  int opt, this_digit_optind, was_digit;
+  int this_digit_optind, was_digit;
   char buf[INT_BUFSIZE_BOUND (intmax_t) + 4];
   char *p = buf;
+  int opt;
 
   was_digit = 0;
   this_digit_optind = optind;
-  while (opt = getopt_long (argc, (char **) argv, short_options, long_options,
-                            NULL),
-         '0' <= opt && opt <= '9')
+  while (1)
     {
+      opt = getopt_long (argc, (char **) argv, short_options,
+                         long_options, NULL);
+      if ( ! ('0' <= opt && opt <= '9'))
+        break;
+
       if (prev_digit_optind != this_digit_optind || !was_digit)
         {
           /* Reset to start another context length argument.  */
@@ -1862,6 +1874,7 @@ main (int argc, char **argv)
   size_t cc;
   int opt, status, prepended;
   int prev_optind, last_recursive;
+  int fread_errno;
   intmax_t default_context;
   FILE *fp;
   exit_failure = EXIT_TROUBLE;
@@ -2011,13 +2024,15 @@ main (int argc, char **argv)
           ;
         keys = xrealloc (keys, keyalloc);
         oldcc = keycc;
-        while (!feof (fp)
-               && (cc = fread (keys + keycc, 1, keyalloc - 1 - keycc, fp)) > 0)
+        while ((cc = fread (keys + keycc, 1, keyalloc - 1 - keycc, fp)) != 0)
           {
             keycc += cc;
             if (keycc == keyalloc - 1)
               keys = x2nrealloc (keys, &keyalloc, sizeof *keys);
           }
+        fread_errno = errno;
+        if (ferror (fp))
+          error (EXIT_TROUBLE, fread_errno, "%s", optarg);
         if (fp != stdin)
           fclose (fp);
         /* Append final newline if file ended in non-newline. */
@@ -2186,7 +2201,7 @@ main (int argc, char **argv)
     color_option = isatty (STDOUT_FILENO) && should_colorize ();
   init_colorize ();
 
-  /* POSIX.2 says that -q overrides -l, which in turn overrides the
+  /* POSIX says that -q overrides -l, which in turn overrides the
      other output options.  */
   if (exit_on_match)
     list_files = 0;
@@ -2243,8 +2258,7 @@ main (int argc, char **argv)
     {
       /* A copy must be made in case of an xrealloc() or free() later.  */
       keycc = strlen (argv[optind]);
-      keys = xmalloc (keycc + 1);
-      strcpy (keys, argv[optind++]);
+      keys = xmemdup (argv[optind++], keycc + 1);
     }
   else
     usage (EXIT_TROUBLE);

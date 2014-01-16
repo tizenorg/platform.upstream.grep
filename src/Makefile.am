@@ -1,5 +1,5 @@
 ## Process this file with automake to create Makefile.in
-# Copyright 1997-1998, 2005-2012 Free Software Foundation, Inc.
+# Copyright 1997-1998, 2005-2014 Free Software Foundation, Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,7 +38,8 @@ libgrep_a_SOURCES = kwset.c dfa.c searchutils.c dfasearch.c kwsearch.c \
 # replacement functions defined in libgreputils.a.
 LDADD = \
   libgrep.a \
-  ../lib/libgreputils.a $(LIBINTL) ../lib/libgreputils.a $(LIBICONV)
+  ../lib/libgreputils.a $(LIBINTL) ../lib/libgreputils.a $(LIBICONV) \
+  $(LIBTHREAD)
 
 grep_LDADD = $(LDADD) $(LIB_PCRE)
 localedir = $(datadir)/locale

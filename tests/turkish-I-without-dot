@@ -3,7 +3,7 @@
 # (like "I" in the tr_TR.utf8 locale) whose lower-case representation
 # occupies more bytes (two in this case, for 0xc4b1, aka U+0131).
 
-# Copyright (C) 2011-2012 Free Software Foundation, Inc.
+# Copyright (C) 2011-2014 Free Software Foundation, Inc.
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ compare out in || fail=1
 # buffer have precisely the same length (22 bytes here), yet internal
 # offsets do differ.  Lengths are the same because while some bytes shrink
 # when converted to lower case, others grow, and here they balance out.
-i='I\xC4\xB0'
+i='I\304\260'
 printf "$i$i$i$i$i$i$i\n" > in || framework_failure_
 LC_ALL=tr_TR.utf8 grep -i .... in > out || fail=1
 compare out in || fail=1
