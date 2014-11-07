@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU grep 2.5g\n"
 "Report-Msgid-Bugs-To: bug-grep@gnu.org\n"
-"POT-Creation-Date: 2014-01-01 20:44-0800\n"
+"POT-Creation-Date: 2014-05-22 21:06-0700\n"
 "PO-Revision-Date: 2004-02-13 23:59+0100\n"
 "Last-Translator: Eivind Tagseth <eivindt@multinet.no>\n"
 "Language-Team: Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Valid arguments are:"
 msgstr ""
 
-#: lib/closeout.c:112 src/main.c:954
+#: lib/closeout.c:112 src/grep.c:949
 #, c-format
 msgid "write error"
 msgstr ""
@@ -94,8 +94,8 @@ msgstr "%s: flagget «-W %s» tar ikke argumenter\n"
 msgid "%s: option '-W %s' requires an argument\n"
 msgstr "%s: flagget «%s» trenger et argument\n"
 
-#: lib/obstack.c:413 lib/obstack.c:415 lib/xalloc-die.c:34 src/kwset.c:178
-#: src/kwset.c:186 src/kwset.c:409 src/pcresearch.c:191
+#: lib/obstack.c:416 lib/obstack.c:418 lib/xalloc-die.c:34
+#: src/pcresearch.c:177
 #, c-format
 msgid "memory exhausted"
 msgstr "minnet oppbrukt"
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Unmatched \\{"
 msgstr ""
 
-#: lib/regcomp.c:161 src/dfa.c:1374
+#: lib/regcomp.c:161 src/dfa.c:1412
 msgid "Invalid content of \\{\\}"
 msgstr ""
 
@@ -199,7 +199,7 @@ msgstr ""
 msgid "Premature end of regular expression"
 msgstr ""
 
-#: lib/regcomp.c:176 src/dfa.c:1377
+#: lib/regcomp.c:176 src/dfa.c:1415
 msgid "Regular expression too big"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgstr ""
 #. for this package.  Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the address for translation
 #. bugs (typically your translation team's web or email address).
-#: lib/version-etc.c:245 src/main.c:1637
+#: lib/version-etc.c:245 src/grep.c:1624
 #, c-format
 msgid ""
 "\n"
@@ -355,7 +355,7 @@ msgstr ""
 msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
 msgstr ""
 
-#: lib/version-etc.c:256 src/main.c:1640
+#: lib/version-etc.c:256 src/grep.c:1627
 msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
 msgstr ""
 
@@ -374,128 +374,107 @@ msgstr ""
 msgid "%s%s argument '%s' too large"
 msgstr ""
 
-#: src/dfa.c:956 src/dfa.c:959 src/dfa.c:979 src/dfa.c:989 src/dfa.c:1001
-#: src/dfa.c:1052 src/dfa.c:1061 src/dfa.c:1064 src/dfa.c:1069 src/dfa.c:1082
-#: src/dfa.c:1138
+#: src/dfa.c:1017 src/dfa.c:1020 src/dfa.c:1039 src/dfa.c:1049 src/dfa.c:1061
+#: src/dfa.c:1097 src/dfa.c:1106 src/dfa.c:1109 src/dfa.c:1114 src/dfa.c:1128
+#: src/dfa.c:1174
 #, fuzzy
 msgid "unbalanced ["
 msgstr "Ubalansert ["
 
-#: src/dfa.c:1010
+#: src/dfa.c:1073
 msgid "invalid character class"
 msgstr ""
 
-#: src/dfa.c:1175
+#: src/dfa.c:1217
 msgid "character class syntax is [[:space:]], not [:space:]"
 msgstr ""
 
-#: src/dfa.c:1227
+#: src/dfa.c:1265
 #, fuzzy
 msgid "unfinished \\ escape"
 msgstr "Uferdig \\-beskyttelse"
 
-#: src/dfa.c:1794
+#: src/dfa.c:1845
 #, fuzzy
 msgid "unbalanced ("
 msgstr "Ubalansert ("
 
-#: src/dfa.c:1920
+#: src/dfa.c:1971
 #, fuzzy
 msgid "no syntax specified"
 msgstr "Ingen syntaks spesifisert"
 
-#: src/dfa.c:1928
+#: src/dfa.c:1979
 #, fuzzy
 msgid "unbalanced )"
 msgstr "Ubalansert )"
 
-#: src/egrep.c:16
-msgid "PATTERN is an extended regular expression (ERE).\n"
-msgstr ""
-
-#: src/egrep.c:18
-msgid "Invocation as 'egrep' is deprecated; use 'grep -E' instead.\n"
-msgstr ""
-
-#: src/fgrep.c:10
-msgid "PATTERN is a set of newline-separated fixed strings.\n"
-msgstr ""
-
-#: src/fgrep.c:12
-msgid "Invocation as 'fgrep' is deprecated; use 'grep -F' instead.\n"
-msgstr ""
-
-#: src/grep.c:32
-msgid "PATTERN is, by default, a basic regular expression (BRE).\n"
-msgstr ""
-
-#: src/grep.c:34
-msgid ""
-"'egrep' means 'grep -E'.  'fgrep' means 'grep -F'.\n"
-"Direct invocation as either 'egrep' or 'fgrep' is deprecated.\n"
-msgstr ""
-
 #. This is a proper name. See the gettext manual, section Names.
-#: src/main.c:57
+#: src/grep.c:57
 msgid "Mike Haertel"
 msgstr ""
 
-#: src/main.c:58
+#: src/grep.c:58
 msgid "others, see <http://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS>"
 msgstr ""
 
-#: src/main.c:500
+#: src/grep.c:502
 msgid "invalid context length argument"
 msgstr "ugyldig kontekstlengde"
 
-#: src/main.c:569
+#: src/grep.c:571
 msgid "lseek failed"
 msgstr ""
 
-#: src/main.c:707
+#: src/grep.c:704
 #, c-format
 msgid "input is too large to count"
 msgstr "for mye inndata til å telle"
 
-#: src/main.c:1273
+#: src/grep.c:1261
 #, c-format
 msgid "Binary file %s matches\n"
 msgstr "Binær fil %s samsvarer\n"
 
-#: src/main.c:1316
+#: src/grep.c:1304
 #, fuzzy, c-format
 msgid "warning: %s: %s"
 msgstr "advarsel: %s: %s\n"
 
-#: src/main.c:1317
+#: src/grep.c:1305
 msgid "recursive directory loop"
 msgstr "rekursiv katalog-løkke"
 
-#: src/main.c:1465
+#: src/grep.c:1453
 #, c-format
 msgid "input file %s is also the output"
 msgstr ""
 
-#: src/main.c:1523
+#: src/grep.c:1511
 msgid "(standard input)"
 msgstr "(standard inn)"
 
-#: src/main.c:1539 src/main.c:1546
+#: src/grep.c:1527 src/grep.c:1534
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERN [FILE]...\n"
 msgstr "Bruk: %s [FLAGG]... MØNSTER [FIL]...\n"
 
-#: src/main.c:1541
+#: src/grep.c:1529
 #, fuzzy, c-format
 msgid "Try '%s --help' for more information.\n"
 msgstr "Prøv «%s --help» for mer informasjon.\n"
 
-#: src/main.c:1547
+#: src/grep.c:1535
 #, c-format
 msgid "Search for PATTERN in each FILE or standard input.\n"
 msgstr ""
 
-#: src/main.c:1550
+#: src/grep.c:1536
+#, c-format
+msgid "PATTERN is, by default, a basic regular expression (BRE).\n"
+msgstr ""
+
+#: src/grep.c:1537
 #, fuzzy, c-format
 msgid ""
 "Example: %s -i 'hello world' menu.h main.c\n"
@@ -507,7 +486,7 @@ msgstr ""
 "\n"
 "Regulært utvalg og fortolkning:\n"
 
-#: src/main.c:1555
+#: src/grep.c:1541
 #, fuzzy, c-format
 msgid ""
 "  -E, --extended-regexp     PATTERN is an extended regular expression (ERE)\n"
@@ -522,7 +501,7 @@ msgstr ""
 "  -G, --basic-regexp        MØNSTER er et grunnleggende regulært uttrykk\n"
 "  -P, --perl-regexp         MØNSTER er et regulært uttrykk på Perl-format\n"
 
-#: src/main.c:1561
+#: src/grep.c:1547
 #, fuzzy, c-format
 msgid ""
 "  -e, --regexp=PATTERN      use PATTERN for matching\n"
@@ -541,16 +520,15 @@ msgstr ""
 "  -z, --null-data           en datalinje slutter med en 0-byte, ikke "
 "linjeskift\n"
 
-#: src/main.c:1568
+#: src/grep.c:1554
 #, fuzzy, c-format
 msgid ""
 "\n"
 "Miscellaneous:\n"
 "  -s, --no-messages         suppress error messages\n"
 "  -v, --invert-match        select non-matching lines\n"
-"  -V, --version             print version information and exit\n"
-"      --help                display this help and exit\n"
-"      --mmap                deprecated no-op; evokes a warning\n"
+"  -V, --version             display version information and exit\n"
+"      --help                display this help text and exit\n"
 msgstr ""
 "\n"
 "Diverse:\n"
@@ -560,7 +538,7 @@ msgstr ""
 "      --help                vis denne helpeteksten og avslutt\n"
 "      --mmap                bruk minne-mappet inndata hvis mulig\n"
 
-#: src/main.c:1576
+#: src/grep.c:1561
 #, c-format
 msgid ""
 "\n"
@@ -575,7 +553,7 @@ msgid ""
 "prefix\n"
 msgstr ""
 
-#: src/main.c:1587
+#: src/grep.c:1572
 #, c-format
 msgid ""
 "  -o, --only-matching       show only the part of a line matching PATTERN\n"
@@ -585,7 +563,7 @@ msgid ""
 "  -a, --text                equivalent to --binary-files=text\n"
 msgstr ""
 
-#: src/main.c:1594
+#: src/grep.c:1579
 #, c-format
 msgid ""
 "  -I                        equivalent to --binary-files=without-match\n"
@@ -597,7 +575,7 @@ msgid ""
 "  -R, --dereference-recursive  likewise, but follow all symlinks\n"
 msgstr ""
 
-#: src/main.c:1603
+#: src/grep.c:1588
 #, c-format
 msgid ""
 "      --include=FILE_PATTERN  search only files that match FILE_PATTERN\n"
@@ -608,7 +586,7 @@ msgid ""
 "skipped.\n"
 msgstr ""
 
-#: src/main.c:1609
+#: src/grep.c:1594
 #, c-format
 msgid ""
 "  -L, --files-without-match  print only names of FILEs containing no match\n"
@@ -618,7 +596,7 @@ msgid ""
 "  -Z, --null                print 0 byte after FILE name\n"
 msgstr ""
 
-#: src/main.c:1615
+#: src/grep.c:1600
 #, c-format
 msgid ""
 "\n"
@@ -628,7 +606,7 @@ msgid ""
 "  -C, --context=NUM         print NUM lines of output context\n"
 msgstr ""
 
-#: src/main.c:1622
+#: src/grep.c:1607
 #, fuzzy, c-format
 msgid ""
 "  -NUM                      same as --context=NUM\n"
@@ -655,7 +633,14 @@ msgstr ""
 "  -u, --unix-byte-offsets   rapporter posisjoner som om CRene ikke var der\n"
 "                            (MSDOS)\n"
 
-#: src/main.c:1632
+#: src/grep.c:1616
+#, c-format
+msgid ""
+"'egrep' means 'grep -E'.  'fgrep' means 'grep -F'.\n"
+"Direct invocation as either 'egrep' or 'fgrep' is deprecated.\n"
+msgstr ""
+
+#: src/grep.c:1619
 #, c-format
 msgid ""
 "When FILE is -, read standard input.  With no FILE, read . if a command-"
@@ -665,88 +650,78 @@ msgid ""
 "if any error occurs and -q is not given, the exit status is 2.\n"
 msgstr ""
 
-#: src/main.c:1638
+#: src/grep.c:1625
 #, c-format
 msgid "GNU Grep home page: <%s>\n"
 msgstr ""
 
-#: src/main.c:1670
-#, c-format
-msgid "%s can only use the %s pattern syntax"
-msgstr ""
-
-#: src/main.c:1673
+#: src/grep.c:1691
 #, c-format
 msgid "conflicting matchers specified"
 msgstr "motsigende søkeuttrykk spesifisert"
 
-#: src/main.c:1687
+#: src/grep.c:1702
 #, fuzzy, c-format
 msgid "invalid matcher %s"
 msgstr "ugyldig maksantall"
 
-#: src/main.c:1940
+#: src/grep.c:2010
 #, c-format
 msgid "unknown devices method"
 msgstr "ukjent enhetmetode"
 
-#: src/main.c:2071
+#: src/grep.c:2137
 #, c-format
 msgid "invalid max count"
 msgstr "ugyldig maksantall"
 
-#: src/main.c:2128
+#: src/grep.c:2194
 #, c-format
 msgid "unknown binary-files type"
 msgstr "ukjent binærfiltype"
 
-#: src/main.c:2187
-#, c-format
-msgid "the --mmap option has been a no-op since 2010"
-msgstr ""
-
-#: src/pcresearch.c:51
+#: src/pcresearch.c:48
 msgid ""
 "support for the -P option is not compiled into this --disable-perl-regexp "
 "binary"
 msgstr ""
 
-#: src/pcresearch.c:74
+#: src/pcresearch.c:64
 #, fuzzy, c-format
 msgid "the -P option only supports a single pattern"
 msgstr "-P-flagget er ikke støttet"
 
-#: src/pcresearch.c:120
+#: src/pcresearch.c:110
 #, c-format
 msgid "internal error (should never happen)"
 msgstr ""
 
-#: src/pcresearch.c:130
+#: src/pcresearch.c:120
 #, c-format
 msgid "failed to allocate memory for the PCRE JIT stack"
 msgstr ""
 
-#: src/pcresearch.c:144
+#: src/pcresearch.c:134
 #, c-format
 msgid "internal error"
 msgstr ""
 
-#: src/pcresearch.c:176
+#: src/pcresearch.c:162
 #, c-format
 msgid "exceeded PCRE's line length limit"
 msgstr ""
 
-#: src/pcresearch.c:195
+#: src/pcresearch.c:181
 #, c-format
 msgid "exceeded PCRE's backtracking limit"
 msgstr ""
 
-#: src/pcresearch.c:199
+#: src/pcresearch.c:185
 #, c-format
 msgid "invalid UTF-8 byte sequence in input"
 msgstr ""
 
-#: src/pcresearch.c:206
+#: src/pcresearch.c:192
 #, c-format
 msgid "internal PCRE error: %d"
 msgstr ""
