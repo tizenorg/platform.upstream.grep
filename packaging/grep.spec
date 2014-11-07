@@ -2,7 +2,7 @@ Name:           grep
 BuildRequires:  automake
 BuildRequires:  pcre-devel
 Url:            http://www.gnu.org/software/grep/
-Version:        2.16
+Version:        2.19
 Release:        0
 Summary:        Print lines matching a pattern
 License:        GPL-3.0+
